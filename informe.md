@@ -37,4 +37,6 @@ El modelo principal mejora (marginalmente) su performance con respecto a la meto
 
 ## Conclusiones
 
-Los resultados que obtuvimos con nuesto análisis indican que Gemini tiene una gran capacidad para resolver tareas de razonamiento, superando ampliamente al modelo aleatorio. Aunque la mejora entre el enfoque zero-shot y el few-shot con chain-of-thought sea marginal (1 punto porcentual), se encuentra en línea con los resultados de [Wang et al](https://arxiv.org/abs/2406.01574), donde obtienen mejores resultados al agregar chain-of-thought.
+Los resultados que obtuvimos con nuesto análisis indican que Gemini tiene una gran capacidad para resolver tareas de razonamiento, superando ampliamente al modelo aleatorio con el que compitió. 
+
+[Wang et al](https://arxiv.org/abs/2406.01574), los autores utilizan un approach similar al nuestro: la mayoría de los modelos fueron evaluados con 5-shot + CoT, aunque algunos (como Gemini-1.5 Flash) fueron también evaluados con zero-shot. Aunque la mejora entre el enfoque zero-shot y  few-shot con chain-of-thought sea marginal (1 punto porcentual), se encuentra en línea con los resultados de Wang et al, donde obtienen mejores resultados al agregar chain-of-thought.
