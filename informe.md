@@ -35,8 +35,20 @@ El modelo principal (Gemini) obtuvo un accuracy del 57%, lo que demuestra que ti
 
 El modelo principal mejora (marginalmente) su performance con respecto a la metodología de zero-shot con un accuracy del 58%. Esto demuestra que incorporar ejemplos y razonamiento mejora la performance, aunque esa mejora es marginal. En este caso, se obtuvo una accuracy de 12.40% para el modelo baseline, consistente con el azar y con el resultado previo.
 
+### Comparación contra el paper
+
+Si comparamos los resultados contra el paper de MMLU-Pro Wang et al., se observa que, en línea con lo reportado, la performance del enfoque Change-of-Thought es consistentemente superior al Zero-shot. 
+Al hacer énfasis en la comparación con los modelos desarrollados por Google, se destaca que el rendimiento global de Gemini 1.5 Flash es muy cercano al obtenido en los experimentos realizados, con un accuracy promedio de 59.1 % en el paper frente a un 58 % en nuestro experimento.
+Sin embargo, al desagregar los resultados por categoría, surgen diferencias relevantes. En áreas como biology y psychology, los resultados obtenidos incluso superan o igualan a los reportados para Gemini Flash, mostrando una mayor precisión en dominios relacionados con las ciencias de la vida y la conducta. No obstante, en disciplinas como law, business o physics, se evidencia una brecha importante, alcanzando diferencias de hasta 20-30 puntos porcentuales.
+
+![Accuracy por categoría](https://github.com/nicokossacoff/mmlu-pro-validation/raw/main/data/Accuracy_by_cat.png)
+
+
 ## Conclusiones
 
 Los resultados que obtuvimos con nuesto análisis indican que Gemini tiene una gran capacidad para resolver tareas de razonamiento, superando ampliamente al modelo aleatorio con el que compitió. 
 
 En [Wang et al](https://arxiv.org/abs/2406.01574) los autores utilizan un enfoque similar al nuestro: la mayoría de los modelos fueron evaluados con 5-shot + CoT, aunque algunos (como Gemini-1.5 Flash) fueron también evaluados con zero-shot. Aunque, en nuestro caso, la mejora entre el enfoque zero-shot y few-shot con chain-of-thought sea marginal (1 punto porcentual), se encuentra en línea con los resultados de Wang et al, donde obtienen mejores resultados al agregar chain-of-thought.
+
+En futuras iteraciones, sería recomendable no sólo incrementar la cantidad de modelos con los que comparar la performance, sino también afinar los Prompts en aquellas categorías en las que el modelo no está respondiendo correctamente.
+
