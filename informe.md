@@ -21,7 +21,7 @@ El modelo principal que evaluamos en este trabajo es Gemini, desarrollado por Go
 ### Técnicas de Evaluación
 Se aplicaron dos configuraciones principales para la evaluación:
 - Zero-shot: El modelo (Gemini) responde a cada pregunta sin recibir ejemplos previos. La pregunta se presenta, y el modelo debe responder sin recibir contexto adicional.
-- Few-shot con Chain-of-Thought (CoT): Aquí se incluyen ejemplos previos que le muestran al modelo cómo razonar paso a paso antes de llegar a una respuesta, busca estimular el razonamiento del modelo.
+- Few-shot con Chain-of-Thought (CoT): Aquí se incluyen ejemplos previos que le muestran al modelo cómo razonar paso a paso antes de llegar a una respuesta, busca estimular el razonamiento del modelo. Para generar este CoT, se generó un diccionario que contenía 5 ejemplos CoT (provistos del validation set) por categoría. Al llegar una nueva pregunta, se buscaba la categoría para agregar al contexto del Prompt los CoT.
 
 En ambos casos, medimos el accuracy como métrica principal, es decir, la proporción de respuestas correctas sobre el total.
 
